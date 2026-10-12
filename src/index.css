@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #7f1d1d;
+  --bg-soft: #fff8f0;
+  --accent: #e11d48;
+  --accent-2: #f59e0b;
+  --text: #fff5f5;
+  --glow: rgba(251, 191, 36, 0.45);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+}
+
+.font-handwriting {
+  font-family: 'Dancing Script', cursive;
+}
+
+.font-sans-ui {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Subtle handmade film grain & vignette */
+.bg-grain {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.vignette-overlay {
+  background: radial-gradient(
+    circle at 50% 45%,
+    transparent 35%,
+    rgba(10, 2, 4, 0.48) 100%
+  );
+}
+
+/* Polaroid card shadow */
+.polaroid-shadow {
+  box-shadow:
+    0 20px 40px -12px rgba(0, 0, 0, 0.38),
+    0 4px 12px -2px rgba(0, 0, 0, 0.18),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+/* Candle flame keyframe animation */
+@keyframes flameFlicker {
+  0%,
+  100% {
+    transform: scale(1) rotate(-1.5deg);
+    opacity: 0.95;
+  }
+  25% {
+    transform: scale(1.04, 0.96) rotate(1.5deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.97, 1.06) rotate(-0.5deg);
+    opacity: 0.92;
+  }
+  75% {
+    transform: scale(1.03, 0.98) rotate(2deg);
+    opacity: 0.98;
+  }
+}
+
+.animate-flame {
+  animation: flameFlicker 1.6s ease-in-out infinite;
+  transform-origin: 50% 90%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

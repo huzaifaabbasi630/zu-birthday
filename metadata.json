@@ -1,0 +1,8 @@
+{
+  "name": "A Little Surprise 🎂",
+  "description": "A romantic, personalized birthday surprise web experience featuring a passcode lock, polaroid memories, typewriter love letter, and microphone-reactive birthday cake.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
